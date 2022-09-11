@@ -1,4 +1,4 @@
-export default function Modal({ modalVisible ,children, modalClose }) {
+export default function Modal({ modalVisible ,children, modalClose, fullscreen }) {
   document.onkeydown = (evt) => {
     evt = evt || window.event
     var isEscape = false
@@ -15,10 +15,12 @@ export default function Modal({ modalVisible ,children, modalClose }) {
     <>
       {modalVisible ? (
         <>
-          <div className="transition-all ease-in-out duration-1000 overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none h-full w-full bg-slate-800" >
-            {children}
+          <div className={`m-auto transition-all ease-in-out duration-1000 overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-slate-800 ${fullscreen ? ' h-full w-full' : 'max-h-max max-w-max rounded-xl'}`} >
+            <div className="overflow-clip w-full items-center flex flex-col">
+              {children}
+            </div>
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+          <div onClick={modalClose} className="opacity-60 fixed inset-0 z-40 bg-black"></div>
         </>
       ) : null}
     </>

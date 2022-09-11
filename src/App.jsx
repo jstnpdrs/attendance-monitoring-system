@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import SubjectClass from "./pages/SubjectClass";
 
 export default function App() {
   const user = useSelector((state)=>state.auth.user)
@@ -18,7 +19,6 @@ export default function App() {
   // useEffect(() => {
   //   !user && navigate("/login")
   // }, [user])
-  
   return (
     <div className="flex h-screen w-full">
       
@@ -29,6 +29,7 @@ export default function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="attendance" element={ <Attendance/>} />
           <Route path="subjects" element={<Subject/>} />
+          <Route path="subjects/:test" element={<SubjectClass/>} />
           <Route path="profile" element={ <Profile />} />
       </Routes>
       <ToastContainer

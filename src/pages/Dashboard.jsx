@@ -17,12 +17,98 @@ export default function Dashboard() {
         }
     })
     return <>
-        <div className="overflow-clip w-full items-center justify-center flex flex-col">
-            <p className="w-full text-6xl mb-20 text-center">Dashboard</p>
-            {/* subject list */}
-            <div onClick={()=>dispatch(getAllUser())} className="text-xl py-2 px-6 space-x-4 w-full max-w-md items-center justify-between flex hover:bg-slate-600 hover:cursor-pointer bg-slate-700 rounded-3xl shadow-lg mb-4">
-                <p>Click me</p>
-            </div>
+        <div className="mx-auto p-5 overflow-x-auto relative shadow-md sm:rounded-lg w-full max-w-4xl">
+            <table className="w-full text-sm text-left text-gray-200">
+                <thead className="text-gray-200 bg-gray-50 dark:bg-gray-600">
+                    <tr>
+                        <td scope="col" className="py-3 px-6">
+                            Subject
+                        </td>
+                        <td scope="col" className="py-3 px-6">
+                            Class
+                        </td>
+                        <td scope="col" className="py-3 px-6 text-center">
+                            Total Students
+                        </td>
+                        <td scope="col" className="py-3 px-6 text-center">
+                            Present
+                        </td>
+                        <td scope="col" className="py-3 px-6 text-center">
+                            Absent
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-gray-700 dark:border-gray-700 hover:bg-gray-50 hover:cursor-pointer dark:hover:bg-gray-500">
+                        <td scope="row" className="py-4 px-6 whitespace-nowrap">
+                            Web Development Web Development
+                        </td>
+                        <td className="py-4 px-6">
+                            BSIT - IV
+                        </td>
+                        <td className="py-4 px-6 text-center">
+                            34
+                        </td>
+                        <td className="py-4 px-6 text-center">
+                            32
+                        </td>
+                        <td className="py-4 px-6 text-center">
+                            2
+                        </td>
+                    </tr>
+                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-gray-700 dark:border-gray-700 hover:bg-gray-50 hover:cursor-pointer dark:hover:bg-gray-500">
+                        <td scope="row" className="py-4 px-6 whitespace-nowrap">
+                            Web Development Web Development
+                        </td>
+                        <td className="py-4 px-6">
+                            BSIT - IV
+                        </td>
+                        <td className="py-4 px-6 text-center">
+                            34
+                        </td>
+                        <td className="py-4 px-6 text-center">
+                            32
+                        </td>
+                        <td className="py-4 px-6 text-center">
+                            2
+                        </td>
+                    </tr>
+                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-gray-700 dark:border-gray-700 hover:bg-gray-50 hover:cursor-pointer dark:hover:bg-gray-500">
+                        <td scope="row" className="py-4 px-6 whitespace-nowrap">
+                            Web Development Web Development
+                        </td>
+                        <td className="py-4 px-6">
+                            BSIT - IV
+                        </td>
+                        <td className="py-4 px-6 text-center">
+                            34
+                        </td>
+                        <td className="py-4 px-6 text-center">
+                            32
+                        </td>
+                        <td className="py-4 px-6 text-center">
+                            2
+                        </td>
+                    </tr>
+                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-gray-700 dark:border-gray-700 hover:bg-gray-50 hover:cursor-pointer dark:hover:bg-gray-500">
+                        <td scope="row" className="py-4 px-6 whitespace-nowrap">
+                            Web Development Web Development
+                        </td>
+                        <td className="py-4 px-6">
+                            BSIT - IV
+                        </td>
+                        <td className="py-4 px-6 text-center">
+                            34
+                        </td>
+                        <td className="py-4 px-6 text-center">
+                            32
+                        </td>
+                        <td className="py-4 px-6 text-center">
+                            2
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <Modal modalVisible={modalVisible} modalClose={()=>setModalVisible(false)}>
             asdasd

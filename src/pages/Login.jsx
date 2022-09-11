@@ -51,7 +51,7 @@ export default function Login() {
         <div className="bg-indigo-900 p-10 overflow-clip m-auto items-center justify-center flex flex-col">
             <p className="w-full text-6xl mb-20 text-center">Login</p>
             <form onSubmit={onSubmit} className='flex flex-col space-y-2 text-black'>
-                <input type="text" name="username" id="username" placeholder='Username' value={userData.username} onChange={ onChange }/>
+                <input type="text" name="username" id="username" placeholder='Username' value={userData.username} onChange={ onChange } autoComplete='off'/>
                 <input type="password" name="password" id="password" placeholder='Password' value={userData.password} onChange={ onChange } />
                 <button className='bg-green-900 rounded-md'>Test</button>
             </form>

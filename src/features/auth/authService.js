@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { toast } from 'react-toastify'
 const api = (url) => {
+    // return 'https://mern-backend-test.onrender.com/api/' + url
     return 'http://localhost:5000/api/' + url
 }
 
