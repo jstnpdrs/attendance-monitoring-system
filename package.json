@@ -13,6 +13,7 @@
     "@formkit/auto-animate": "^1.0.0-beta.3",
     "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",

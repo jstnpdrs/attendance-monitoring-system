@@ -14,7 +14,7 @@ export default function SubjectClass() {
         <div className="overflow-clip w-full items-center flex flex-col p-5">
             <div className='flex w-full justify-between'>
                 <p onClick={()=>navigate(-1)} className="hover:cursor-pointer">{ "< Back" }</p>
-                <p>test : { useParams().test }</p>
+                <p>test : { useParams().id }</p>
             </div>
             <div className="w-full text-4xl mb-5 mt-20 flex max-w-4xl">
                 <p className="w-full">Web Development BSIT-IV</p>

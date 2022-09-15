@@ -12,6 +12,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import SubjectClass from "./pages/SubjectClass";
+import Course from "./pages/Course";
+import CourseStudent from "./pages/CourseStudent";
 
 export default function App() {
   const user = useSelector((state)=>state.auth.user)
@@ -19,6 +21,7 @@ export default function App() {
   // useEffect(() => {
   //   !user && navigate("/login")
   // }, [user])
+  const {isLoading} = useSelector((state)=>state.auth)
   return (
     <div className="flex h-screen w-full">
       
@@ -29,21 +32,38 @@ export default function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="attendance" element={ <Attendance/>} />
           <Route path="subjects" element={<Subject/>} />
-          <Route path="subjects/:test" element={<SubjectClass/>} />
-          <Route path="profile" element={ <Profile />} />
+          <Route path="subjects/:id" element={<SubjectClass/>} />
+          <Route path="courses" element={<Course/>} />
+          <Route path="courses/:course" element={<CourseStudent/>} />
+          <Route path="*" element={<p>404 Page Not Found 404</p>} />
+          {/* <Route path="profile" element={ <Profile />} /> */}
       </Routes>
       <ToastContainer
         theme= "dark"
-        position="top-right"
-        autoClose={2000}
-        hideProgressBar
+        position="top-center"
+        autoClose={1000}
         newestOnTop={false}
         closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
+        pauseOnFocusLoss={false}
+        draggable={true}
+        pauseOnHover={true}
+        // limit={2}
+        // hideProgressBar
+        // rtl={false}
       />
+      
+      {isLoading && <div className=" w-full h-full bg-opacity-60 fixed inset-0 z-40 bg-black flex justify-center items-center space-x-6 ">
+          <div className="mb-40 bg-white h-2 w-2 rounded-full blur-sm animate-ping"/>
+          <div className="mb-40 bg-white h-2 w-2 rounded-full blur-sm animate-ping animation-delay-1"/>
+          <div className="mb-40 bg-white h-2 w-2 rounded-full blur-sm animate-ping animation-delay-2"/>
+          <div className="mb-40 bg-white h-2 w-2 rounded-full blur-sm animate-ping animation-delay-3"/>
+          <div className="mb-40 bg-white h-2 w-2 rounded-full blur-sm animate-ping animation-delay-4"/>
+          <div className="mb-40 bg-white h-2 w-2 rounded-full blur-sm animate-ping animation-delay-5"/>
+          <div className="mb-40 bg-white h-2 w-2 rounded-full blur-sm animate-ping animation-delay-6"/>
+          {/* <div className="bg-white h-6 w-6 rounded-full blur-sm animate-ping animation-delay-7"/> */}
+          {/* <div className="bg-white h-6 w-6 rounded-full blur-sm animate-ping animation-delay-8"/> */}
+          {/* <div className="bg-white h-6 w-6 rounded-full blur-sm animate-ping animation-delay-9"/> */}
+      </div>}
     </div>
   )
 }

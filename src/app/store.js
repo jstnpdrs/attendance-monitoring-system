@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import dataReducer from '../features/data/dataSlice'
+import courseReducer from '../features/course/courseSlice'
 import authReducer from '../features/auth/authSlice'
 export const store = configureStore({
     reducer: {
-        data: dataReducer,
+        course: courseReducer,
         auth: authReducer,
     },
 })

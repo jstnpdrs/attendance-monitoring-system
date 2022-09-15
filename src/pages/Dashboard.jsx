@@ -17,9 +17,9 @@ export default function Dashboard() {
         }
     })
     return <>
-        <div className="mx-auto p-5 overflow-x-auto relative shadow-md sm:rounded-lg w-full max-w-4xl">
-            <table className="w-full text-sm text-left text-gray-200">
-                <thead className="text-gray-200 bg-gray-50 dark:bg-gray-600">
+        <div className="mx-auto p-5 overflow-x-auto relative sm:rounded-lg w-full max-w-4xl">
+            <table className="w-full text-sm text-left text-slate-200">
+                <thead className="text-slate-200 bg-slate-50 dark:bg-slate-600">
                     <tr>
                         <td scope="col" className="py-3 px-6">
                             Subject
@@ -39,7 +39,7 @@ export default function Dashboard() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-gray-700 dark:border-gray-700 hover:bg-gray-50 hover:cursor-pointer dark:hover:bg-gray-500">
+                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-slate-700 dark:border-slate-700 hover:bg-slate-50 hover:cursor-pointer dark:hover:bg-slate-500">
                         <td scope="row" className="py-4 px-6 whitespace-nowrap">
                             Web Development Web Development
                         </td>
@@ -56,7 +56,7 @@ export default function Dashboard() {
                             2
                         </td>
                     </tr>
-                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-gray-700 dark:border-gray-700 hover:bg-gray-50 hover:cursor-pointer dark:hover:bg-gray-500">
+                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-slate-700 dark:border-slate-700 hover:bg-slate-50 hover:cursor-pointer dark:hover:bg-slate-500">
                         <td scope="row" className="py-4 px-6 whitespace-nowrap">
                             Web Development Web Development
                         </td>
@@ -73,7 +73,7 @@ export default function Dashboard() {
                             2
                         </td>
                     </tr>
-                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-gray-700 dark:border-gray-700 hover:bg-gray-50 hover:cursor-pointer dark:hover:bg-gray-500">
+                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-slate-700 dark:border-slate-700 hover:bg-slate-50 hover:cursor-pointer dark:hover:bg-slate-500">
                         <td scope="row" className="py-4 px-6 whitespace-nowrap">
                             Web Development Web Development
                         </td>
@@ -90,7 +90,7 @@ export default function Dashboard() {
                             2
                         </td>
                     </tr>
-                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-gray-700 dark:border-gray-700 hover:bg-gray-50 hover:cursor-pointer dark:hover:bg-gray-500">
+                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-slate-700 dark:border-slate-700 hover:bg-slate-50 hover:cursor-pointer dark:hover:bg-slate-500">
                         <td scope="row" className="py-4 px-6 whitespace-nowrap">
                             Web Development Web Development
                         </td>

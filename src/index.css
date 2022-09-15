@@ -3,7 +3,35 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@layer utilities {
+  .animation-delay-1 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-2 {
+    animation-delay: 150ms;
+  }
+  .animation-delay-3 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-4 {
+    animation-delay: 250ms;
+  }
+  .animation-delay-5 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-6 {
+    animation-delay: 350ms;
+  }
+  .animation-delay-7 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-8 {
+    animation-delay: 450ms;
+  }
+  .animation-delay-9 {
+    animation-delay: 500ms;
+  }
+}
 html,body,#root{
     /* height: 100%; */
     font-family: 'Poppins', sans-serif;
@@ -19,5 +47,13 @@ input{
     @apply text-red-600
 }
 a{
-    @apply flex items-center h-8 hover:text-red-600 w-full
+    @apply flex items-center h-8 hover:text-red-600 w-full bg-inherit
+}
+svg{
+    flex: none;
+    z-index: 30;
+    height: 2rem !important;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-color:inherit;
 }

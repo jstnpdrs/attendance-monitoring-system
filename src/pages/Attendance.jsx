@@ -1,27 +1,41 @@
 import { useState, useRef, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import Modal from '../components/Modal';
 export default function Attendance() {
     const [modalVisible, setModalVisible] = useState(false)
+    const [studentId, setStudentId] = useState('')
+
     const modalOpen = () => {
         setModalVisible(true)
     }
+
     const modalClose = () => {
         setModalVisible(false)
     }
+    
     const handleSubmit = () => {
         e.preventDefault()
         console.log(studentId);
     }
-    const [studentId, setStudentId] = useState('')
+    
     const onChange = (e) => {
         setStudentId(e.target.value)
     }
+    
     const onEnter = (e) => {
-        if (e.key === 'Enter') {
-            console.log(e.code+' student id: '+e.target.value)
+        if (e.key === 'Enter' && e.target.value) {
+            // console.log(e.code+' student id: '+e.target.value)
             setStudentId('')
+            // set 
+            setIsLoginSuccess(true)
+            setTimeout(() => {
+                setIsLoginSuccess(false)
+                // toast(e.code+' student id: '+e.target.value)
+            }, 1000);
         }
     }
+    const [isLoginSuccess, setIsLoginSuccess] = useState(false)
+    const [caption, setCaption] = useState('Please scan your ID')
     const focusDiv = useRef()
     return <>
         <div className="overflow-clip w-full items-center justify-center flex flex-col">
@@ -33,7 +47,7 @@ export default function Attendance() {
         </div>
         <Modal modalVisible={modalVisible} modalClose={modalClose} fullscreen={true}>
             <div className="space-y-4 p-10 flex flex-col h-screen w-full">
-                <p className='text-5xl m-auto'>Please scan your ID</p>
+                <p className='text-5xl m-auto'>{isLoginSuccess ? 'Login Success' : 'Please scan your ID'}</p>
                 <input
                     className='bg-transparent text-center active:ring-transparent focus:outline-0 caret-transparent text-transparent h-0'
                     // className='bg-transparent text-center active:ring-transparent focus:outline-0 border'
@@ -46,7 +60,8 @@ export default function Attendance() {
                     onChange={onChange}
                     autoFocus
                     onBlur={()=>focusDiv.current.focus()}
-                    autoComplete='off' />
+                    autoComplete='off'
+                />
             </div>
         </Modal>
     </>
