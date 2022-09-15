@@ -88,7 +88,7 @@ export default function CourseStudent() {
                 studentName: '',
                 studentId: ''
             })
-            toast.success(`${course.courseName+" - "+course.yearLevel} Deleted`)
+            toast.success(`${student.studentName} Deleted`)
         }
     }
     
