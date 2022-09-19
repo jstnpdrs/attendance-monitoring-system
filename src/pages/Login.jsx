@@ -48,12 +48,18 @@ export default function Login() {
         )
     }
     return <>
-        <div className="bg-indigo-900 p-10 overflow-clip m-auto items-center justify-center flex flex-col">
+        <div className="bg-slate-900 bg-opacity-40 rounded-xl shadow-xl text-white p-20 overflow-clip m-auto items-center justify-center flex flex-col">
             <p className="w-full text-6xl mb-20 text-center">Login</p>
-            <form onSubmit={onSubmit} className='flex flex-col space-y-2 text-black'>
-                <input type="text" name="username" id="username" placeholder='Username' value={userData.username} onChange={ onChange } autoComplete='off'/>
-                <input type="password" name="password" id="password" placeholder='Password' value={userData.password} onChange={ onChange } />
-                <button className='bg-green-900 rounded-md'>Test</button>
+            <form onSubmit={onSubmit} className='flex flex-col space-y-6'>
+                <div className='w-full flex flex-col'>
+                    <label htmlFor="username" className='text-sm tracking-widest mb-1'>Username</label>
+                    <input className='bg-transparent border-white border rounded-md px-4' type="text" name="username" id="username" placeholder='Username' value={userData.username} onChange={ onChange } autoComplete='off' autoFocus/>
+                </div>
+                <div className='w-full flex flex-col'>
+                    <label htmlFor="password" className='text-sm tracking-widest mb-1'>Password</label>
+                    <input className='bg-transparent border-white border rounded-md px-4' type="password" name="password" id="password" placeholder='Password' value={userData.password} onChange={ onChange } />
+                </div>
+                <button className='bg-slate-900 hover:bg-opacity-50 rounded-md py-2'>Login</button>
             </form>
         </div>
     </>

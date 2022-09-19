@@ -61,14 +61,24 @@ export default function Register() {
         )
     }
     return <>
-        <div className="bg-indigo-900 p-10 overflow-clip m-auto items-center justify-center flex flex-col">
+        <div className="bg-slate-900 bg-opacity-40 rounded-xl shadow-xl text-white p-20 overflow-clip m-auto items-center justify-center flex flex-col">
             <p className="w-full text-6xl mb-20 text-center">Register</p>
-            <form onSubmit={onSubmit} className='flex flex-col space-y-2 text-black'>
-                <input type="text" name="fullName" id="fullName" placeholder='Name' value={userData.fullName} onChange={ onChange }/>
-                <input type="text" name="username" id="username" placeholder='Username' value={userData.username} onChange={ onChange }/>
-                <input type="password" name="password" id="password" placeholder='Password' value={userData.password} onChange={ onChange } />
-                <input type="password" name="password2" id="password2" placeholder='Confirm Password' value={userData.password2} onChange={ onChange }/>
-                <button className='bg-black rounded-md text-white p-2'>Test</button>
+            <form onSubmit={onSubmit} className='flex flex-col space-y-6'>
+                <div className='w-full flex flex-col'>
+                    <input className='bg-transparent border-white border rounded-md px-4' type="text" name="fullName" id="fullName" placeholder='Name' value={userData.fullName} onChange={ onChange }/>
+                </div>
+                                <div className='w-full flex flex-col'>
+                    <input className='bg-transparent border-white border rounded-md px-4' type="text" name="username" id="username" placeholder='Username' value={userData.username} onChange={ onChange }/>
+                </div>
+                <div className='w-full flex flex-col'>
+                    <input className='bg-transparent border-white border rounded-md px-4' type="password" name="password" id="password" placeholder='Password' value={userData.password} onChange={ onChange } />
+                </div>
+
+                <div className='w-full flex flex-col'>
+                    <input className='bg-transparent border-white border rounded-md px-4' type="password" name="password2" id="password2" placeholder='Confirm Password' value={userData.password2} onChange={ onChange }/>
+                </div>
+
+                <button className='bg-slate-900 hover:bg-opacity-50 rounded-md py-2'>Register</button>
             </form>
         </div>
     </>

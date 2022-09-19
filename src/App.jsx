@@ -32,7 +32,7 @@ export default function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="attendance" element={ <Attendance/>} />
           <Route path="subjects" element={<Subject/>} />
-          <Route path="subjects/:id" element={<SubjectClass/>} />
+          <Route path="subjects/:subject" element={<SubjectClass/>} />
           <Route path="courses" element={<Course/>} />
           <Route path="courses/:course" element={<CourseStudent/>} />
           <Route path="*" element={<p>404 Page Not Found 404</p>} />

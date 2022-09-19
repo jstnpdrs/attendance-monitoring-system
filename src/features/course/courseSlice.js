@@ -75,6 +75,11 @@ export const courseSlice = createSlice({
                 state.isSuccess = true
                 state.courses = action.payload
             })
+            .addCase(addCourse.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.isSuccess = true
+                state.courses = action.payload
+            })
             .addCase(getCourse.fulfilled, (state, action) => {
                 state.isLoading = false
                 state.isSuccess = true
