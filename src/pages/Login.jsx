@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, reset } from "../features/auth/authSlice";
+import { getAllUser, login, reset } from "../features/auth/authSlice";
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 
@@ -9,7 +9,10 @@ export default function Login() {
     const navigate = useNavigate()
 
     const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth)
-
+    useEffect(() => {
+        dispatch(getAllUser())
+    }, [])
+    
     useEffect(() => {
         if (isError) {
             toast.error(message)
