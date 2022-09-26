@@ -77,7 +77,9 @@ export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
 export const logout = createAsyncThunk('auth/logout', async () => {
     await authService.logout()
 })
-export const getAllUser = createAsyncThunk('auth/getAllUser', authService.getAllUser)
+export const getAllUser = createAsyncThunk('auth/getAllUser', async () => {
+    await authService.getAllUser()
+})
 
 export const { reset } = authSlice.actions
 

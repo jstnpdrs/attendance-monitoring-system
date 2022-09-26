@@ -77,8 +77,8 @@ export default function Register() {
                 <div className='w-full flex flex-col'>
                     <input className='bg-transparent border-white border rounded-md px-4' type="password" name="password2" id="password2" placeholder='Confirm Password' value={userData.password2} onChange={ onChange }/>
                 </div>
-
                 <button className='bg-slate-900 hover:bg-opacity-50 rounded-md py-2'>Register</button>
+                <p onClick={()=> navigate('/login')} className='text-xs hover:text-blue-500 hover:cursor-pointer tracking-wider'>Already have an account? Sign in</p>
             </form>
         </div>
     </>

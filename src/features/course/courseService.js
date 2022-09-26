@@ -1,49 +1,44 @@
-import axios from 'axios'
-
-function api(url) {
-    return 'https://mern-backend-test.onrender.com/api/' + url
-    // return 'http://localhost:5000/api/' + url
-}
+import axios from "/axiosConfig";
 
 const getCourses = async () => {
-    const response = await axios.get(api('courses'))
+    const response = await axios.get('courses')
         .then((res) => {
             return res.data
         })
     return response
 }
 const getCourse = async (courseId) => {
-    const response = await axios.get(api(`courses/${courseId}`))
+    const response = await axios.get(`courses/${courseId}`)
         .then((res) => {
             return res.data
         })
     return response
 }
 const addCourse = async (courseData) => {
-    await axios.post(api('courses'), courseData)
+    await axios.post('courses', courseData)
     return getCourses()
 }
 const updateCourse = async (courseData) => {
-    await axios.patch(api(`courses/${courseData.courseId}`), courseData.formData)
+    await axios.patch(`courses/${courseData.courseId}`, courseData.formData)
     return getCourses()
 }
 const deleteCourse = async (courseData) => {
-    await axios.delete(api(`courses/${courseData.courseId}`))
+    await axios.delete(`courses/${courseData.courseId}`)
     return getCourses()
 }
 const addStudent = async (courseData) => {
-    const response = await axios.post(api(`courses/${courseData._id}/students`), courseData)
+    const response = await axios.post(`courses/${courseData._id}/students`, courseData)
         .then((res) => {
             return res.data
         })
     return response
 }
 const updateStudent = async (data) => {
-    await axios.patch(api(`courses/${data.courseId}/students/${data.studentId}`), data.studentData)
+    await axios.patch(`courses/${data.courseId}/students/${data.studentId}`, data.studentData)
     return await getCourse(data.courseId)
 }
 const deleteStudent = async (data) => {
-    await axios.delete(api(`courses/${data.courseId}/students/${data.studentId}`))
+    await axios.delete(`courses/${data.courseId}/students/${data.studentId}`)
     return await getCourse(data.courseId)
 }
 

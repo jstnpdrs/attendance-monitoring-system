@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllUser, login, reset } from "../features/auth/authSlice";
+import { login, reset } from "../features/auth/authSlice";
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 
@@ -9,10 +9,7 @@ export default function Login() {
     const navigate = useNavigate()
 
     const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth)
-    useEffect(() => {
-        dispatch(getAllUser())
-    }, [])
-    
+
     useEffect(() => {
         if (isError) {
             toast.error(message)
@@ -63,6 +60,7 @@ export default function Login() {
                     <input className='bg-transparent border-white border rounded-md px-4' type="password" name="password" id="password" placeholder='Password' value={userData.password} onChange={ onChange } />
                 </div>
                 <button className='bg-slate-900 hover:bg-opacity-50 rounded-md py-2'>Login</button>
+                <p onClick={()=> navigate('/register')} className='text-xs hover:text-blue-500 hover:cursor-pointer'>Create account</p>
             </form>
         </div>
     </>
