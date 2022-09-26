@@ -47,7 +47,7 @@ export default function SubjectClass() {
                         {
                             !subject ? null : subject.course.students.map((student) => {
                                 return (
-                                    <tr key={student._id} className="bg-white border-b dark:bg-gray-700 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-500">
+                                    <tr key={student._id} className="border-b bg-gray-700 border-gray-700 hover:bg-gray-500">
                                         <td scope="row" className="py-1 px-3 whitespace-nowrap">
                                             {student.studentName}
                                         </td>

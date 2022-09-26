@@ -39,7 +39,7 @@ export default function Dashboard() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-slate-700 dark:border-slate-700 hover:bg-slate-50 hover:cursor-pointer dark:hover:bg-slate-500">
+                    <tr id='qweqweqwe' className="border-b bg-slate-700 border-slate-700 hover:cursor-pointer hover:bg-slate-500">
                         <td scope="row" className="py-4 px-6 whitespace-nowrap">
                             Web Development Web Development
                         </td>
@@ -56,7 +56,7 @@ export default function Dashboard() {
                             2
                         </td>
                     </tr>
-                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-slate-700 dark:border-slate-700 hover:bg-slate-50 hover:cursor-pointer dark:hover:bg-slate-500">
+                    <tr id='qweqweqwe' className="border-b bg-slate-700 border-slate-700 hover:cursor-pointer hover:bg-slate-500">
                         <td scope="row" className="py-4 px-6 whitespace-nowrap">
                             Web Development Web Development
                         </td>
@@ -73,7 +73,7 @@ export default function Dashboard() {
                             2
                         </td>
                     </tr>
-                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-slate-700 dark:border-slate-700 hover:bg-slate-50 hover:cursor-pointer dark:hover:bg-slate-500">
+                    <tr id='qweqweqwe' className="border-b bg-slate-700 border-slate-700 hover:cursor-pointer hover:bg-slate-500">
                         <td scope="row" className="py-4 px-6 whitespace-nowrap">
                             Web Development Web Development
                         </td>
@@ -90,7 +90,7 @@ export default function Dashboard() {
                             2
                         </td>
                     </tr>
-                    <tr id='qweqweqwe' className="bg-white border-b dark:bg-slate-700 dark:border-slate-700 hover:bg-slate-50 hover:cursor-pointer dark:hover:bg-slate-500">
+                    <tr id='qweqweqwe' className="border-b bg-slate-700 border-slate-700 hover:cursor-pointer hover:bg-slate-500">
                         <td scope="row" className="py-4 px-6 whitespace-nowrap">
                             Web Development Web Development
                         </td>

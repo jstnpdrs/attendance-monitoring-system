@@ -59,6 +59,31 @@ export default function Attendance() {
     }
     // const [currentSubjectId, setCurrentSubjectId] = useState(null)
     const date = Date()
+
+
+    useEffect(() => {
+        let x = ''
+        const keyDownHandler = event => {
+            x && console.log('User pressed: ', event.key);
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                // x && toast(x)
+                setCaption(x)
+                x = ''
+            } else {
+                x = x + event.key
+            }
+        }
+        document.addEventListener('keydown', keyDownHandler);
+
+    return () => { document.removeEventListener('keydown', keyDownHandler); };
+    }, []);
+    useEffect(() => {
+      setTimeout(() => {
+                setCaption('Please scan your ID')
+            }, 1000);
+    }, [caption])
+    
     return <>
         <div className="overflow-clip w-full items-center flex flex-col p-5 max-w-3xl mx-auto">
             <p className="w-full text-4xl mb-5">Attendance</p>
@@ -112,73 +137,76 @@ export default function Attendance() {
                 </tbody>
             </table>
         </div>
-        <Modal modalVisible={modalVisible} modalClose={modalClose} fullscreen={true}>
-            <div className="space-y-6 p-10 flex flex-col h-screen w-full overflow-auto">
-                <div className='flex justify-between w-full max-w-3xl mx-auto opacity-70'>
-                    <p className={`text-3xl text-center`}>{currentSubject && currentSubject.subjectName}</p>
-                    <p className={`text-3xl text-center font-bold tracking-widest ${attendanceType === 'Time-in' ? 'text-green-600':'text-red-600'}`}>{attendanceType}</p>
-                </div>
-                <p className='text-5xl text-center py-20'>{caption}</p>
-                {/* <p className='text-5xl text-center py-20'>Please scan your ID</p> */}
+        {
+            modalVisible &&
+            <Modal modalVisible={modalVisible} modalClose={modalClose} fullscreen={true}>
+                <div className="space-y-6 p-10 flex flex-col h-screen w-full overflow-auto">
+                    <div className='flex justify-between w-full max-w-3xl mx-auto opacity-70'>
+                        <p className={`text-3xl text-center`}>{currentSubject && currentSubject.subjectName}</p>
+                        <p className={`text-3xl text-center font-bold tracking-widest ${attendanceType === 'Time-in' ? 'text-green-600':'text-red-600'}`}>{attendanceType}</p>
+                    </div>
+                    <p className='text-5xl text-center py-20'>{caption}</p>
+                    {/* <p className='text-5xl text-center py-20'>Please scan your ID</p> */}
 
-                <div className='h-full w-full bg-slate-600 max-w-3xl mx-auto mb-10 overflow-auto'>
-                    <table className="w-full text-sm text-left text-gray-200 max-w-3xl mx-auto">
-                        <thead className="text-gray-200 bg-slate-600 h-12 sticky top-0">
-                            <tr>
-                                <td scope="col" className="py-3 px-6">
-                                    Name
-                                </td>
-                                <td scope="col" className="py-3 px-6">
-                                    ID Number
-                                </td>
-                                <td scope="col" className="py-3 px-6 text-center">
-                                    Time-in
-                                </td>
-                                <td scope="col" className="py-3 px-6 text-center">
-                                    Notes
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody className='py-10'>
-                            {
-                                //list of timed in/out students
-                                !currentSubjectStudents ? null : currentSubjectStudents.map(student => {
-                                    return (                                        
-                                        <tr key={student._id} className="border-b bg-slate-700 border-slate-700">
-                                            <td scope="row" className="py-4 px-6 whitespace-nowrap">
-                                                {student.studentName}
-                                            </td>
-                                            <td className="py-4 px-6">
-                                                {student.studentId}
-                                            </td>
-                                            <td className="py-4 px-6 text-center">
-                                                {moment('2022-09-16T14:52:01.862+00:00').format('LT')}
-                                            </td>
-                                            <td className='py-4 px-6 text-center'>
-                                                5 minutes late
-                                            </td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </tbody>
-                    </table>
+                    <div className='h-full w-full bg-slate-600 max-w-3xl mx-auto mb-10 overflow-auto'>
+                        <table className="w-full text-sm text-left text-gray-200 max-w-3xl mx-auto">
+                            <thead className="text-gray-200 bg-slate-600 h-12 sticky top-0">
+                                <tr>
+                                    <td scope="col" className="py-3 px-6">
+                                        Name
+                                    </td>
+                                    <td scope="col" className="py-3 px-6">
+                                        ID Number
+                                    </td>
+                                    <td scope="col" className="py-3 px-6 text-center">
+                                        Time-in
+                                    </td>
+                                    <td scope="col" className="py-3 px-6 text-center">
+                                        Notes
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody className='py-10'>
+                                {
+                                    //list of timed in/out students
+                                    !currentSubjectStudents ? null : currentSubjectStudents.map(student => {
+                                        return (                                        
+                                            <tr key={student._id} className="border-b bg-slate-700 border-slate-700">
+                                                <td scope="row" className="py-4 px-6 whitespace-nowrap">
+                                                    {student.studentName}
+                                                </td>
+                                                <td className="py-4 px-6">
+                                                    {student.studentId}
+                                                </td>
+                                                <td className="py-4 px-6 text-center">
+                                                    {moment('2022-09-16T14:52:01.862+00:00').format('LT')}
+                                                </td>
+                                                <td className='py-4 px-6 text-center'>
+                                                    5 minutes late
+                                                </td>
+                                            </tr>
+                                        )
+                                    })
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <input
+                        // className='bg-black text white text-center active:ring-transparent focus:outline-0 caret-transparent'
+                        className='bg-transparent text-center active:ring-transparent focus:outline-0 caret-transparent text-transparent h-0'
+                        id="stundentId"
+                        name="studentId"
+                        type="text"
+                        ref={focusDiv}
+                        value={studentId}
+                        // onKeyPress={(e) => onEnter(e)}
+                        onChange={onChange}
+                        autoFocus
+                        onBlur={()=>focusDiv.current.focus()}
+                        autoComplete='off'
+                    />
                 </div>
-                <input
-                    // className='bg-black text white text-center active:ring-transparent focus:outline-0 caret-transparent'
-                    className='bg-transparent text-center active:ring-transparent focus:outline-0 caret-transparent text-transparent h-0'
-                    id="stundentId"
-                    name="studentId"
-                    type="text"
-                    ref={focusDiv}
-                    value={studentId}
-                    onKeyPress={(e) => onEnter(e)}
-                    onChange={onChange}
-                    autoFocus
-                    onBlur={()=>focusDiv.current.focus()}
-                    autoComplete='off'
-                />
-            </div>
-        </Modal>
+            </Modal>
+        }
     </>
 }

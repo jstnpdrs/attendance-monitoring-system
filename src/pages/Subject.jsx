@@ -68,7 +68,7 @@ export default function Subject() {
                     <tbody>
                         {
                             !subjects ? null : subjects.map((subject)=>{
-                                return <tr onClick={()=>handleSubjectClick(subject._id)} id={subject._id}  key={subject._id} className="bg-white border-b dark:bg-gray-700 dark:border-gray-700 hover:bg-gray-50 hover:cursor-pointer dark:hover:bg-gray-500">
+                                return <tr onClick={()=>handleSubjectClick(subject._id)} id={subject._id}  key={subject._id} className="border-b bg-gray-700 border-gray-700 hover:cursor-pointer hover:bg-gray-500">
                                     <td scope="row" className="py-4 px-6 whitespace-nowrap">
                                         {subject.subjectName}
                                     </td>

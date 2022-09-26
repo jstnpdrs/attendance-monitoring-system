@@ -118,7 +118,7 @@ export default function Course() {
                             !courses ? null : courses.map((course) => {
                                 const {courseName, yearLevel, _id, students} = course
                                 return (
-                                    <tr key={_id} onClick={()=>handleSubjectClick(_id)} id='qweqweqwe' className="bg-white border-b dark:bg-gray-700 dark:border-gray-700 hover:bg-gray-50 hover:cursor-pointer dark:hover:bg-gray-500">
+                                    <tr key={_id} onClick={()=>handleSubjectClick(_id)} id='qweqweqwe' className="border-b bg-gray-700 border-gray-700 hover:cursor-pointer hover:bg-gray-500">
                                         <td className="py-2 px-3">
                                             {courseName}
                                         </td>

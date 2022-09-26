@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 function api(url) {
-    return 'http://localhost:5000/api/' + url
+    return 'https://mern-backend-test.onrender.com/api/' + url
+    // return 'http://localhost:5000/api/' + url
 }
 
 const getCourses = async () => {
