@@ -31,7 +31,7 @@ export default function SubjectClass() {
             
             <div className="overflow-x-auto relative shadow-md sm:rounded-lg w-full max-w-4xl">
                 <table className="w-full text-sm text-left text-gray-200">
-                    <thead className="text-gray-200 bg-gray-50 dark:bg-gray-600">
+                    <thead className="text-gray-200 bg-gray-600">
                         <tr>
                             <td scope="col" className="py-3 px-6">
                                 Name

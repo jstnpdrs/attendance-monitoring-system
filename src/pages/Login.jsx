@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, reset } from "../features/auth/authSlice";
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/ACC-LOGO.png";
 
 export default function Login() {
     const dispatch = useDispatch()
@@ -48,8 +49,11 @@ export default function Login() {
         )
     }
     return <>
-        <div className="bg-slate-900 bg-opacity-40 rounded-xl shadow-xl text-white p-20 overflow-clip m-auto items-center justify-center flex flex-col">
-            <p className="w-full text-6xl mb-20 text-center">Login</p>
+        <div className="overflow-visible relative bg-slate-900 bg-opacity-40 rounded-xl shadow-xl text-white p-20 m-auto items-center justify-center flex flex-col">
+            <div className='bg-white rounded-full h-60 w-60 absolute -top-32'>
+                <img src={logo} width={240} height={240} alt="img" />
+            </div>
+            <p className="w-full text-6xl my-10 text-center">Login</p>
             <form onSubmit={onSubmit} className='flex flex-col space-y-6'>
                 <div className='w-full flex flex-col'>
                     <label htmlFor="username" className='text-sm tracking-widest mb-1'>Username</label>
